@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "pollamin-agent-marketplace",
+  "description": "Cross-agent marketplace for Pollamin LLC plugins, skills, and workflow assets.",
+  "owner": {
+    "name": "Pollamin LLC",
+    "url": "https://pollamin.com"
+  },
+  "plugins": [
+    {
+      "name": "pollamin-starter",
+      "description": "Starter cross-agent workflow patterns for Pollamin LLC projects.",
+      "author": {
+        "name": "Pollamin LLC",
+        "url": "https://pollamin.com"
+      },
+      "category": "productivity",
+      "source": "./plugins/pollamin-starter",
+      "homepage": "https://github.com/Pollamin/agent-marketplace/tree/main/plugins/pollamin-starter"
+    }
+  ]
+}
