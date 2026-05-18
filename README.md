@@ -29,7 +29,7 @@ This repository is intentionally set up to support both Codex and Claude Code wi
 ├── .claude-plugin/
 │   └── marketplace.json
 └── plugins/
-    └── pollamin-starter/
+    └── pollamin-core/
         ├── metadata/
         │   └── plugin.json
         ├── .codex-plugin/
@@ -38,6 +38,8 @@ This repository is intentionally set up to support both Codex and Claude Code wi
         │   └── plugin.json
         ├── README.md
         └── skills/
+            ├── challenge-me/
+            │   └── SKILL.md
             └── repo-orientation/
                 └── SKILL.md
 ```
@@ -81,7 +83,7 @@ Claude Code:
 
 ```bash
 claude plugin marketplace add Pollamin/agent-marketplace
-claude plugin install pollamin-starter@pollamin-agent-marketplace
+claude plugin install pollamin-core@pollamin-agent-marketplace
 ```
 
 For local development before publishing, point either CLI at this checkout path instead of `Pollamin/agent-marketplace`.

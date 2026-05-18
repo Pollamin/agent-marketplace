@@ -64,4 +64,4 @@ Keep plugin content cross-agent where possible. Prefer one shared skill, command
 
 ## Current Plugin Notes
 
-`pollamin-starter` is the starter plugin. Its useful content currently lives in `plugins/pollamin-starter/skills/repo-orientation/SKILL.md`, and its platform manifests are generated from `plugins/pollamin-starter/metadata/plugin.json`.
+`pollamin-core` is the core plugin. Its useful content currently lives in `plugins/pollamin-core/skills/`, and its platform manifests are generated from `plugins/pollamin-core/metadata/plugin.json`.

@@ -1,6 +1,6 @@
-# Pollamin Starter
+# Pollamin Core
 
-Starter shared plugin for Pollamin agent workflows.
+Core shared plugin for Pollamin agent workflows.
 
 The useful content lives in shared component directories so Codex and Claude Code can load the same instructions:
 

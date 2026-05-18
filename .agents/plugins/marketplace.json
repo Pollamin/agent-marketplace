@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "pollamin-starter",
+      "name": "pollamin-core",
       "source": {
         "source": "local",
-        "path": "./plugins/pollamin-starter"
+        "path": "./plugins/pollamin-core"
       },
       "policy": {
         "installation": "AVAILABLE",
