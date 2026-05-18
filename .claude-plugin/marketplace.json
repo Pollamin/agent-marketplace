@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "agent-marketplace",
+  "name": "pollamin-agent-marketplace",
   "description": "Cross-agent marketplace for Pollamin LLC plugins, skills, and workflow assets.",
   "owner": {
     "name": "Pollamin LLC",
