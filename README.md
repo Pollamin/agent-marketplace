@@ -40,6 +40,12 @@ This repository is intentionally set up to support both Codex and Claude Code wi
         └── skills/
             ├── challenge-me/
             │   └── SKILL.md
+            ├── docs-sync/
+            │   └── SKILL.md
+            ├── handoff-summary/
+            │   └── SKILL.md
+            ├── release-note/
+            │   └── SKILL.md
             └── repo-orientation/
                 └── SKILL.md
 ```

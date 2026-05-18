@@ -2,10 +2,18 @@
 
 Core shared plugin for Pollamin agent workflows.
 
-The useful content lives in shared component directories so Codex and Claude Code can load the same instructions:
+The useful content lives in shared component directories so Codex and Claude Code can load the same instructions.
 
-- `skills/challenge-me/SKILL.md`
-- `skills/repo-orientation/SKILL.md`
+## Skills
+
+- `challenge-me`: pressure-test a plan, design, architecture, API, data model, or implementation approach before execution.
+- `docs-sync`: check and update documentation after behavior, structure, commands, configuration, or workflows change.
+- `handoff-summary`: create a concise continuation note when work pauses or another agent/person needs to resume.
+- `release-note`: turn completed changes into clear release notes, changelog entries, PR summaries, or upgrade notes.
+- `repo-orientation`: inspect a repository before making implementation decisions.
+
+## Shared Component Paths
+
 - `.mcp.json` for bundled MCP servers, when needed
 - `.app.json` for Codex app connector mappings, when needed
 
