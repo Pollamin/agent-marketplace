@@ -1,5 +1,5 @@
 {
-  "name": "pollamin-agent-marketplace",
+  "name": "agent-marketplace",
   "displayName": "Pollamin Agent Marketplace",
   "description": "Cross-agent marketplace for Pollamin LLC plugins, skills, and workflow assets.",
   "repository": "https://github.com/Pollamin/agent-marketplace",
@@ -8,4 +8,3 @@
     "url": "https://pollamin.com"
   }
 }
-

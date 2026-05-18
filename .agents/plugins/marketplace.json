@@ -1,5 +1,5 @@
 {
-  "name": "pollamin-agent-marketplace",
+  "name": "agent-marketplace",
   "interface": {
     "displayName": "Pollamin Agent Marketplace"
   },

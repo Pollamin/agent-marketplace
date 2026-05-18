@@ -65,8 +65,7 @@ Claude Code:
 
 ```bash
 claude plugin marketplace add Pollamin/agent-marketplace
-claude plugin install pollamin-starter@pollamin-agent-marketplace
+claude plugin install pollamin-starter@agent-marketplace
 ```
 
 For local development before publishing, point either CLI at this checkout path instead of `Pollamin/agent-marketplace`.
-
