@@ -8,5 +8,4 @@ The useful content lives in shared component directories so Codex and Claude Cod
 - `.mcp.json` for bundled MCP servers, when needed
 - `.app.json` for Codex app connector mappings, when needed
 
-The platform-specific manifest files are generated from `plugin.meta.json`.
-
+The platform-specific manifest files are generated from `metadata/plugin.json`.

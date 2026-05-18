@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Codex and Claude marketplace manifests from shared metadata."""
+"""Generate Codex and Claude marketplace manifests from source metadata."""
 
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ def write_json(path: Path, payload: dict[str, Any], check: bool) -> bool:
 
 def plugin_dirs() -> list[Path]:
     plugins_root = ROOT / "plugins"
-    return sorted(path.parent for path in plugins_root.glob("*/plugin.meta.json"))
+    return sorted(path.parents[1] for path in plugins_root.glob("*/metadata/plugin.json"))
 
 
 def path_exists(plugin_root: Path, rel_path: str) -> bool:
@@ -139,11 +139,12 @@ def claude_marketplace_entry(meta: dict[str, Any]) -> dict[str, Any]:
 
 
 def build_manifests() -> list[tuple[Path, dict[str, Any]]]:
-    marketplace = load_json(ROOT / "marketplace.meta.json")
-    plugin_meta = [load_json(path / "plugin.meta.json") for path in plugin_dirs()]
+    marketplace = load_json(ROOT / "metadata" / "marketplace.json")
+    plugin_roots = plugin_dirs()
+    plugin_meta = [load_json(path / "metadata" / "plugin.json") for path in plugin_roots]
 
     outputs: list[tuple[Path, dict[str, Any]]] = []
-    for plugin_root, meta in zip(plugin_dirs(), plugin_meta):
+    for plugin_root, meta in zip(plugin_roots, plugin_meta):
         outputs.append((plugin_root / ".codex-plugin" / "plugin.json", codex_manifest(plugin_root, meta)))
         outputs.append((plugin_root / ".claude-plugin" / "plugin.json", claude_manifest(meta)))
 
@@ -190,4 +191,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-

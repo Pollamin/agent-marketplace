@@ -2,21 +2,27 @@
 
 Cross-agent marketplace for Pollamin LLC plugins and reusable agent assets.
 
-This repository is intentionally set up to support both Codex and Claude Code without duplicating plugin content. Each plugin keeps shared assets at the plugin root, then generated manifests expose that same plugin to each platform:
+This repository is intentionally set up to support both Codex and Claude Code without duplicating plugin content. Source metadata lives in explicit `metadata/` folders, shared plugin assets live at the plugin root, and generated manifests expose those plugins to each platform:
 
+- Marketplace source metadata: `metadata/marketplace.json`
+- Plugin source metadata: `plugins/<plugin>/metadata/plugin.json`
+- Shared plugin content: `plugins/<plugin>/skills/`, `commands/`, `agents/`, `hooks/`, `.mcp.json`, `.app.json`, `assets/`
 - Codex marketplace: `.agents/plugins/marketplace.json`
 - Claude marketplace: `.claude-plugin/marketplace.json`
 - Codex plugin manifest: `plugins/<plugin>/.codex-plugin/plugin.json`
 - Claude plugin manifest: `plugins/<plugin>/.claude-plugin/plugin.json`
-- Shared components: `skills/`, `commands/`, `agents/`, `hooks/`, `.mcp.json`, `.app.json`, `assets/`
+- Agent instructions: `AGENTS.md`, with `CLAUDE.md` symlinked to it
 
 ## Layout
 
 ```text
 .
-├── marketplace.meta.json
+├── AGENTS.md
+├── CLAUDE.md -> AGENTS.md
+├── metadata/
+│   └── marketplace.json
 ├── scripts/
-│   └── sync_manifests.py
+│   └── generate_manifests.py
 ├── .agents/
 │   └── plugins/
 │       └── marketplace.json
@@ -24,11 +30,13 @@ This repository is intentionally set up to support both Codex and Claude Code wi
 │   └── marketplace.json
 └── plugins/
     └── pollamin-starter/
-        ├── plugin.meta.json
+        ├── metadata/
+        │   └── plugin.json
         ├── .codex-plugin/
         │   └── plugin.json
         ├── .claude-plugin/
         │   └── plugin.json
+        ├── README.md
         └── skills/
             └── repo-orientation/
                 └── SKILL.md
@@ -36,21 +44,29 @@ This repository is intentionally set up to support both Codex and Claude Code wi
 
 ## Edit Flow
 
-Edit source-of-truth metadata only:
+Edit source metadata and shared plugin content:
 
-- `marketplace.meta.json`
-- `plugins/<plugin>/plugin.meta.json`
+- `metadata/marketplace.json`
+- `plugins/<plugin>/metadata/plugin.json`
+- `plugins/<plugin>/skills/`, `commands/`, `agents/`, `hooks/`, `.mcp.json`, `.app.json`, `assets/`
+
+Do not hand-edit generated platform manifests as the source of truth:
+
+- `.agents/plugins/marketplace.json`
+- `.claude-plugin/marketplace.json`
+- `plugins/<plugin>/.codex-plugin/plugin.json`
+- `plugins/<plugin>/.claude-plugin/plugin.json`
 
 Then regenerate platform manifests:
 
 ```bash
-python3 scripts/sync_manifests.py
+python3 scripts/generate_manifests.py
 ```
 
 Check generated files are current:
 
 ```bash
-python3 scripts/sync_manifests.py --check
+python3 scripts/generate_manifests.py --check
 ```
 
 ## Install
