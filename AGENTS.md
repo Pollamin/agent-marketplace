@@ -54,6 +54,16 @@ When adding a plugin:
 
 Keep plugin content cross-agent where possible. Prefer one shared skill, command, hook, or asset over duplicated Codex- and Claude-specific copies.
 
+## Plugin Asset Scope
+
+Marketplace plugins are reusable assets, not a place for this marketplace repo's own maintenance automation. Assets added under `plugins/<plugin>/` must make sense for the plugin's intended installed context without assuming this repository's file layout, manifest generator, local plugin names, CI, or release process.
+
+For `pollamin-core`, that means assets should be broadly useful across many unrelated projects: general agent operating practices, safety checks, review workflows, documentation workflows, release-writing workflows, or handoff patterns. Other plugins may be narrower, but their assumptions should still match that plugin's purpose and installation target, not the internals of this marketplace repository.
+
+Repo-specific checks such as `python3 scripts/generate_manifests.py --check`, marketplace manifest validation, or assumptions about `metadata/marketplace.json` belong in this repository's docs/scripts/CI, not inside a packaged plugin unless the plugin is explicitly for maintaining this marketplace.
+
+Before adding a skill, command, hook, agent, script, or asset to any plugin, ask: "Would this still make sense in the environment where this plugin is meant to be installed?" If the answer is no, keep it out of the plugin and implement it as marketplace-repo tooling instead.
+
 ## Coding Conventions
 
 - Keep changes small and tied to marketplace/plugin behavior.
