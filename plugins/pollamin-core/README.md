@@ -14,7 +14,13 @@ The useful content lives in shared component directories so Codex and Claude Cod
 
 ## Shared Component Paths
 
+- `hooks/hooks.json` registers `destructive-command-guard` for Bash `PreToolUse` checks.
+- `scripts/destructive_command_guard.py` asks before high-risk shell commands and blocks extremely broad removal targets.
 - `.mcp.json` for bundled MCP servers, when needed
 - `.app.json` for Codex app connector mappings, when needed
+
+## Hooks
+
+- `destructive-command-guard`: prompts for explicit approval before high-risk commands such as force pushes, hard resets, recursive deletes, Docker volume removal, infrastructure destroy operations, Kubernetes deletes, and database drops. It blocks especially broad `rm` targets such as `/`, `/*`, `~`, `$HOME`, `.`, and `..`.
 
 The platform-specific manifest files are generated from `metadata/plugin.json`.

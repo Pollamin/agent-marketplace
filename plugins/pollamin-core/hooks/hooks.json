@@ -1,0 +1,19 @@
+{
+  "description": "Guard against destructive shell commands that can delete data, discard local work, or rewrite shared state.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/destructive_command_guard.py",
+            "args": [],
+            "timeout": 5,
+            "statusMessage": "Checking shell command risk"
+          }
+        ]
+      }
+    ]
+  }
+}

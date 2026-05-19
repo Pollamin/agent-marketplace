@@ -10,7 +10,7 @@ The core rule is: edit source metadata and shared plugin content, then regenerat
 
 - `metadata/marketplace.json` is the source metadata for the marketplace itself.
 - `plugins/<plugin>/metadata/plugin.json` is the source metadata for an individual plugin.
-- `plugins/<plugin>/skills/`, `commands/`, `agents/`, `hooks/`, `.mcp.json`, `.app.json`, and `assets/` are shared plugin content directories/files.
+- `plugins/<plugin>/skills/`, `commands/`, `agents/`, `hooks/`, `scripts/`, `.mcp.json`, `.app.json`, and `assets/` are shared plugin content directories/files.
 - `.agents/plugins/marketplace.json` is the generated Codex marketplace manifest.
 - `.claude-plugin/marketplace.json` is the generated Claude marketplace manifest.
 - `plugins/<plugin>/.codex-plugin/plugin.json` is the generated Codex plugin manifest.
@@ -47,7 +47,7 @@ There is no package manager or dependency install step for the current repo. The
 When adding a plugin:
 
 1. Create `plugins/<plugin>/metadata/plugin.json`.
-2. Put reusable content under shared component paths such as `skills/`, `commands/`, `agents/`, `hooks/`, `assets/`, `.mcp.json`, or `.app.json`.
+2. Put reusable content under shared component paths such as `skills/`, `commands/`, `agents/`, `hooks/`, `scripts/`, `assets/`, `.mcp.json`, or `.app.json`.
 3. Reference only existing component paths from `plugins/<plugin>/metadata/plugin.json`.
 4. Run `python3 scripts/generate_manifests.py`.
 5. Run `python3 scripts/generate_manifests.py --check`.

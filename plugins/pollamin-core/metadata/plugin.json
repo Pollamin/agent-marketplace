@@ -24,6 +24,7 @@
     "authentication": "ON_INSTALL"
   },
   "paths": {
+    "hooks": "./hooks/hooks.json",
     "skills": "./skills/"
   },
   "interface": {

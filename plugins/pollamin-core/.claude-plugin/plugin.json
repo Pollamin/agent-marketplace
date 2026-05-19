@@ -14,5 +14,6 @@
     "workflow",
     "codex",
     "claude"
-  ]
+  ],
+  "hooks": "./hooks/hooks.json"
 }

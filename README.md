@@ -6,7 +6,7 @@ This repository is intentionally set up to support both Codex and Claude Code wi
 
 - Marketplace source metadata: `metadata/marketplace.json`
 - Plugin source metadata: `plugins/<plugin>/metadata/plugin.json`
-- Shared plugin content: `plugins/<plugin>/skills/`, `commands/`, `agents/`, `hooks/`, `.mcp.json`, `.app.json`, `assets/`
+- Shared plugin content: `plugins/<plugin>/skills/`, `commands/`, `agents/`, `hooks/`, `scripts/`, `.mcp.json`, `.app.json`, `assets/`
 - Codex marketplace: `.agents/plugins/marketplace.json`
 - Claude marketplace: `.claude-plugin/marketplace.json`
 - Codex plugin manifest: `plugins/<plugin>/.codex-plugin/plugin.json`
@@ -36,7 +36,11 @@ This repository is intentionally set up to support both Codex and Claude Code wi
         │   └── plugin.json
         ├── .claude-plugin/
         │   └── plugin.json
+        ├── hooks/
+        │   └── hooks.json
         ├── README.md
+        ├── scripts/
+        │   └── destructive_command_guard.py
         └── skills/
             ├── challenge-me/
             │   └── SKILL.md
@@ -56,7 +60,7 @@ Edit source metadata and shared plugin content:
 
 - `metadata/marketplace.json`
 - `plugins/<plugin>/metadata/plugin.json`
-- `plugins/<plugin>/skills/`, `commands/`, `agents/`, `hooks/`, `.mcp.json`, `.app.json`, `assets/`
+- `plugins/<plugin>/skills/`, `commands/`, `agents/`, `hooks/`, `scripts/`, `.mcp.json`, `.app.json`, `assets/`
 
 Do not hand-edit generated platform manifests as the source of truth:
 

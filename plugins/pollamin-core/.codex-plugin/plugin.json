@@ -15,6 +15,7 @@
     "codex",
     "claude"
   ],
+  "hooks": "./hooks/hooks.json",
   "skills": "./skills/",
   "interface": {
     "displayName": "Pollamin Core",
